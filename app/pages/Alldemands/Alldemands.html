@@ -1,0 +1,21 @@
+<div id="wrapper">
+    <legend>All the Demands</legend>
+    <table class="table">
+        <tr>
+            <th class="id">Id</th>
+            <th class="demand">Demand</th>
+            <th class="status">Status</th>
+            <th class="place">Place</th>
+            <th class="budget">Budget</th>
+            <th class="date">Date</th>
+        </tr>
+        <tr ng-repeat="i in demands_data">
+            <td>{{i.id}}</td>
+            <td>{{i.intitule_demande}}</td>
+            <td>{{i.status}}</td>
+            <td>{{i.lieu}}</td>
+            <td>{{i.budget}}</td>
+            <td>{{i.date}}</td>
+        </tr>
+    </table>
+</div>

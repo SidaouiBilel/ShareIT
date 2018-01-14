@@ -1,0 +1,45 @@
+
+        <div class="col-sm" ng-controller="messageCtrl">
+            <div class="row">
+               <h2>Messages:</h2>
+            </div>
+            <br/>
+            <br/>
+            <div class="row">
+                <div class="col-sm-6">
+                    <table class="table">
+                        <tr>
+                            <th colspan="3" style="text-align: center">Sent</th>
+                        </tr>
+                        <tr>
+                            <th style="text-align: center">Message</th>
+                            <th style="text-align: center">prenom</th>
+                            <th style="text-align: center">nom</th>
+                        </tr>
+                        <tr ng-repeat="i in data.messages_sent">
+                            <td>{{ i.contenu}}</td>
+                            <td> {{i.destinataire.prenom}} </td>
+                            <td> {{i.destinataire.nom}}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-sm-6">
+                    <table class="table">
+                        <tr>
+                            <th colspan="3" style="text-align: center">Received</th>
+                        </tr>
+                        <tr>
+                            <th style="text-align: center">Message</th>
+                            <th style="text-align: center">prenom</th>
+                            <th style="text-align: center">nom</th>
+                        </tr>
+                        <tr ng-repeat="i in data.messages_received">
+                            <td>{{ i.contenu}}</td>
+                            <td> {{i.destinateur.prenom}}</td>
+                            <td> {{i.destinateur.nom}}</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>

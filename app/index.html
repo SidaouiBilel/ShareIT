@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>StartIT</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Fonts -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="css/animate.css" rel="stylesheet" />
+  <!-- Squad theme CSS -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="color/default.css" rel="stylesheet">
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+
+  <!-- Header-->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header page-scroll">
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+           <i class="fa fa-bars"></i>
+          </button>
+          <a class="navbar-brand" href="#">
+             <h1>ShareIT</h1>
+          </a>
+      </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-right navbar-main-collapse" ng-controller="homeCtrl">
+      <ul class="nav navbar-nav">
+        <li><a href="#!home#service">Home</a></li>
+        <li ng-if="loggedin()"><a href="#!profile#service">Profile</a> </li>
+        <li ng-if="loggedin()"><a href="#!message#service">Messages</a> </li>
+        <li><a href="#!Alldemands#service">All Demands</a></li>
+        <li class="dropdown" ng-if="!loggedin()">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown">User <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#!login#service">Log in</a></li>
+            <li><a href="#!signup#service">Sign up</a></li>
+          </ul>
+        </li>
+        <li ng-if="loggedin()"><a ng-click="signout()">Log out</a></li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+    <section id="intro" class="intro">
+
+      <div class="slogan">
+        <h2>WELCOME TO <span class="text_color">ShareIT</span> </h2>
+        <h4>WE ARE GROUP OF Engineers based in Belgium</h4>
+      </div>
+      <div class="page-scroll">
+        <a href="#service" class="btn btn-circle">
+          <i class="fa fa-angle-double-down animated"></i>
+        </a>
+      </div>
+    </section>
+  <!-- /Header -->
+
+
+    <section class="home-section text-center" id="service">
+      <div class="heading-about">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+              <div class="wow bounceInDown" data-wow-delay="0.4s" ng-view>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-12">
+            <div class="wow shake" data-wow-delay="0.4s">
+              <div class="page-scroll marginbot-30">
+                <a href="#intro" id="totop" class="btn btn-circle">
+                  <i class="fa fa-angle-double-up animated"></i>
+                </a>
+              </div>
+            </div>
+            <p>&copy;ShareIT. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  <!-- Footer -->
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="pages/Alldemands/Alldemands.js"></script>
+  <script src="pages/home/home.js"></script>
+  <script src="pages/message/message.js"></script>
+  <script src="pages/login/login.js"></script>
+  <script src="pages/signup/signup.js"></script>
+  <script src="pages/profile/profile.js"></script>
+  <!-- Core JavaScript Files -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/jquery.scrollTo.js"></script>
+  <script src="js/wow.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script src="js/custom.js"></script>
+  <script src="contactform/contactform.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+
+<div id="wrapper">
+    <form action="" method="post">
+        <fieldset>
+            <legend>Register Form</legend>
+            <div>
+                <input type="text" ng-model="user.prenom" placeholder="First Name"/>
+            </div>
+            <div>
+                <input type="text" ng-model="user.nom" placeholder="Last Name"/>
+            </div>
+            <div>
+                <input type="password" ng-model="user.password" placeholder="Password"/>
+            </div>
+            <div>
+                <input type="text" ng-model="user.email" placeholder="Email"/>
+            </div>
+            <div>
+                <input type="text" ng-model="user.adr_postale" placeholder="Postal Code"/>
+            </div>
+            <div>
+                <input type="text" ng-model="user.tel" placeholder="Phone Number"/>
+            </div>
+            <div>
+                <input type="text" ng-model="user.ville" placeholder="Country"/>
+            </div>
+            <input type="button" ng-click="sign_up(user)" value="Submit"/>
+        </fieldset>
+    </form>
+</div>

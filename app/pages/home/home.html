@@ -1,0 +1,85 @@
+<div id="wrapper">
+        <div class="col-sm" ng-controller="homeCtrl">
+            <div class="row">
+                <h2> Demand a Service or Material </h2>
+            </div>
+            <br/>
+            <br/>
+            <div class="row">
+                <div class="col-sm-6 align-center">
+                    <input type="radio" id="material" name="categorie" ng-model="categorie" ng-value="false">
+                    <label for="material">Material</label>
+                </div>
+                <div class="col-sm-6 align-center">
+                    <input type="radio" id="services" name="categorie" ng-model="categorie" ng-value="true">
+                    <label for="services">Service</label>
+                </div>
+            </div>
+            <br/>
+              <div class="align-center" ng-if="categorie">
+                      <form action="" method="post">
+                          <fieldset>
+                              <legend>Service Form</legend>
+                              <div>
+                                  <div class="small">Describe what you are looking for</div>
+                                  <textarea name="intitule_demande" placeholder="Description"></textarea>
+                              </div>
+                              <div>
+                                  <input type="text" name="lieu" placeholder="Place"/>
+                              </div>
+                              <div>
+                                  <input type="text" name="budget" placeholder="Budget"/>
+                              </div>
+                              <div>
+                                  <input type="date" name="date" placeholder="Time"/>
+                              </div>
+                              <input type="submit" name="submit" value="Send"/>
+                          </fieldset>
+                      </form>
+                  </div>
+              <div class="align-center" ng-if="!categorie">
+                      <form action="" method="post">
+                          <fieldset>
+                              <legend>Material Form</legend>
+                              <div>
+                                  <div class="small">Describe what you need</div>
+                                  <textarea name="intitule_demande" placeholder="Description"></textarea>
+                              </div>
+                              <div>
+                                  <input type="text" name="lieu" placeholder="Place"/>
+                              </div>
+                              <div>
+                                  <input type="text" name="budget" placeholder="Budget"/>
+                              </div>
+                              <div>
+                                  <input type="date" name="date" placeholder="Time"/>
+                              </div>
+
+                              <input type="submit" name="submit" value="Send"/>
+                          </fieldset>
+                      </form>
+                  </div>
+            </div>
+</div>
+<br/>
+<div id="wrapper">
+        <legend>List of Demands</legend>
+    <table class="table">
+        <tr>
+            <th class="id">Id</th>
+            <th class="demand">Demand</th>
+            <th class="status">Status</th>
+            <th class="place">Place</th>
+            <th class="budget">Budget</th>
+            <th class="date">Date</th>
+        </tr>
+        <tr ng-repeat="i in demands_data">
+            <td>{{i.id}}</td>
+            <td>{{i.intitule_demande}}</td>
+            <td>{{i.status}}</td>
+            <td>{{i.lieu}}</td>
+            <td>{{i.budget}}</td>
+            <td>{{i.date}}</td>
+        </tr>
+    </table>
+</div>
